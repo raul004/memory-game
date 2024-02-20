@@ -7,21 +7,21 @@ const characters = [
     'jerry',
     'jessica',
     'morty',
-    'meeseeks',
     'pessoa-passaro',
     'pickle-rick',
     'rick',
-    'scroopy',
     'summer',
+    'meeseeks',
+    'scroopy',
 ];
 
 const createElement = (tag, className) => {
     
     const element = document.createElement(tag);
-    element.classList(className);
+    element.className = className;
     return element;
 
-};
+}
 
 let firstCard = '';
 let secondCard = '';
@@ -32,7 +32,7 @@ const checkEndGame = () => {
 
     if (disabledCards.length === 20) {
         clearInterval(this.loop);
-        alert(`Parabéns, ${spanPlayer.innerHTML}! Seu tempo foi de: ${timer.innerHTML}`);
+        alert(`Parabéns, ${player.innerHTML}! Seu tempo foi de: ${timer.innerHTML}`);
     }
 };
 
@@ -71,6 +71,7 @@ const revealCard = ({ target }) => {
 
     if (firstCard === '') {
         target.parentNode.classList.add('reveal-card');
+        firstCard = target.parentNode;
     
     } else if (secondCard === '') {
         target.parentNode.classList.add('reveal-card');
@@ -83,8 +84,8 @@ const revealCard = ({ target }) => {
 const createCard = (character) => {
 
     const card = createElement('div', 'card');
-    const front = createElement('div', 'front');
-    const back = createElement('div', 'back');
+    const front = createElement('div', 'face front');
+    const back = createElement('div', 'face back');
 
     front.style.backgroundImage = `url('../assets/${character}.png')`;
 
@@ -92,7 +93,7 @@ const createCard = (character) => {
     card.appendChild(back);
 
     card.addEventListener('click', revealCard);
-    card.setAtribute('data-character', character);
+    card.setAttribute('data-character', character);
 
     return card;
 };
@@ -101,9 +102,9 @@ const loadGame = () => {
 
     const duplicateCharacters = [...characters, ...characters];
 
-    const suffledArray = duplicateCharacters.sort(() => Math.random - 0.5);
+    const shuffledArray = duplicateCharacters.sort(() => Math.random - 0.5);
 
-    suffledArray.forEach((character) => {
+    shuffledArray.forEach((character) => {
 
         const card = createCard(character);
         grid.appendChild(card);
@@ -122,7 +123,7 @@ const startTimer = () => {
 };
 
 window.onload = () => {
-    spanPlayer.innerHTML = localStorage.getItem('player');
+    player.innerHTML = localStorage.getItem('player: ');
     startTimer();
     loadGame();
-}
+};
