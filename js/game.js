@@ -29,3 +29,17 @@ const createCard = (character) => {
     card.addEventListener('click', revealCard);
     card.setAtribute('data-character', character);
 }
+
+const loadGame = () => {
+
+    const duplicateCharacters = [...characters, ...characters];
+
+    const suffledArray = duplicateCharacters.sort(() => Math.random - 0.5);
+
+    suffledArray.forEach((character) => {
+
+        const card = createCard(character);
+        grid.appendChild(card);
+
+    });
+}
