@@ -95,7 +95,7 @@ const createCard = (character) => {
     card.setAtribute('data-character', character);
 
     return card;
-}
+};
 
 const loadGame = () => {
 
@@ -109,7 +109,7 @@ const loadGame = () => {
         grid.appendChild(card);
 
     });
-}
+};
 
 const startTimer = () => {
 
@@ -120,3 +120,9 @@ const startTimer = () => {
         
     }, 1000);
 };
+
+window.onload = () => {
+    spanPlayer.innerHTML = localStorage.getItem('player');
+    startTimer();
+    loadGame();
+}
