@@ -15,6 +15,14 @@ const characters = [
     'summer',
 ];
 
+const createElement = (tag, className) => {
+    
+    const element = document.createElement(tag);
+    element.classList(className);
+    return element;
+    
+};
+
 const createCard = (character) => {
 
     const card = createElement('div', 'card');
