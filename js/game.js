@@ -20,7 +20,7 @@ const createElement = (tag, className) => {
     const element = document.createElement(tag);
     element.classList(className);
     return element;
-    
+
 };
 
 const createCard = (character) => {
@@ -53,3 +53,13 @@ const loadGame = () => {
 
     });
 }
+
+const startTimer = () => {
+
+    this.loop = setInterval(() => {
+
+        const currentTime = +timer.innerHTML;
+        timer.innerHTML = currentTime + 1;
+        
+    }, 1000);
+};
