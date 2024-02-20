@@ -14,3 +14,18 @@ const characters = [
     'scroopy',
     'summer',
 ];
+
+const createCard = (character) => {
+
+    const card = createElement('div', 'card');
+    const front = createElement('div', 'front');
+    const back = createElement('div', 'back');
+
+    front.style.backgroundImage = `url('../assets/${character}.png')`;
+
+    card.appendChild(front);
+    card.appendChild(back);
+
+    card.addEventListener('click', revealCard);
+    card.setAtribute('data-character', character);
+}
