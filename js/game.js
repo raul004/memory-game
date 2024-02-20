@@ -28,6 +28,8 @@ const createCard = (character) => {
 
     card.addEventListener('click', revealCard);
     card.setAtribute('data-character', character);
+
+    return card;
 }
 
 const loadGame = () => {
