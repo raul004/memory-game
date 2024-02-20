@@ -23,6 +23,23 @@ const createElement = (tag, className) => {
 
 };
 
+const revealCard = ({ target }) => {
+
+    if (target.parentNode.className.includes('reveal-card')) {
+        return;
+    }
+
+    if (firstCard === '') {
+        target.parentNode.classList.add('reveal-card');
+    
+    } else if (secondCard === '') {
+        target.parentNode.classList.add('reveal-card');
+        secondCard = target.parentNode;
+
+        checkCards();
+    }
+};
+
 const createCard = (character) => {
 
     const card = createElement('div', 'card');
