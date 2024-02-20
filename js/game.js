@@ -26,6 +26,33 @@ const createElement = (tag, className) => {
 let firstCard = '';
 let secondCard = '';
 
+const checkCards = () => {
+
+    const firstCharacter = firstCard.getAttribute('data-character');
+    const secondCharacter = secondCard.getAttribute('data-character');
+
+    if (firstCharacter === secondCharacter) {
+        firstCard.firstChild.classList.add('disabled-card');
+        secondCard.firstChild.classList.add('disabled-card');
+
+        firstCard = '';
+        secondCard = '';
+
+        checkEndGame();
+    
+    } else {
+        setTimeout(() => {
+            firstCard.classList.remove('reveal-card');
+            secondCard.classList.remove('reveal-card');
+
+            firstCard = '';
+            secondCard = '';
+
+        }, 500);
+    } 
+
+};
+
 const revealCard = ({ target }) => {
 
     if (target.parentNode.className.includes('reveal-card')) {
