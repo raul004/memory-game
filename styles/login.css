@@ -8,7 +8,7 @@ main {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: rgba(245, 245, 245, 0.862);
+    background: rgba(245, 245, 245, 0.688);
     box-shadow: 5px 5px 10px rgba(52, 52, 52, 0.221);
     padding: 15px;
     border-radius: 8px;
@@ -40,7 +40,7 @@ main {
 }
 
 .login-input {
-    border: 2px solid #333;
+    border: 2px solid #fff;
     border-radius: 8px;
     outline: none;
     color: #333;
@@ -53,7 +53,7 @@ main {
  
 .login-button {
     background-color: #00b5cc;
-    border: 3px solid #b2df28;
+    border: none;
     border-radius: 8px;
     color: #fff;
     cursor: pointer;
@@ -61,6 +61,11 @@ main {
     padding: 10px;
     max-width: 300px;
     width: 100%;
+    transition: background-color 0.5s ease-in-out;
+}
+
+.login-button:hover {
+    background-color: #00d0ec;
 }
 
 .login-button:disabled {
