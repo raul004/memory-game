@@ -82,3 +82,12 @@ main {
 .show {
     display: block;
 }
+
+
+@media screen and (min-width: 767px) {
+    
+    main {
+        width: 400px;
+        height: 550px;
+    }
+}
