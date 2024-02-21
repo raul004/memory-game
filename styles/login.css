@@ -3,6 +3,16 @@ body {
     background-size: cover;
 }
 
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(245, 245, 245, 0.862);
+    padding: 15px;
+    border-radius: 8px;
+}
+
 .login-form {
     height: 100vh;
     display: flex;
