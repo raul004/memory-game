@@ -9,6 +9,7 @@ main {
     align-items: center;
     justify-content: center;
     background: rgba(245, 245, 245, 0.862);
+    box-shadow: 5px 5px 10px rgba(52, 52, 52, 0.221);
     padding: 15px;
     border-radius: 8px;
 }
